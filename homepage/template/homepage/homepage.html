@@ -1,0 +1,30 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'homepage/red.png' %}">
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}" >
+    <title>COVID-19</title>
+</head>
+<body id="wrapper">
+        <div id="header">
+                C <div id="img-head"></div>VID-19
+        </div>
+        <h2>Live data of India</h2>
+    <div id="data-div">
+        <div id="inner-data-div">
+            <p>Confirmed </p>    <h4> {{ confirmed }}</h4>
+        </div>
+        <div id="inner-data-div">
+            <p>Recovered</p>  <h4>  {{ recovery }}</h4>
+        </div>
+        <div id="inner-data-div">
+            <p>Deaths</p>   <h4> {{ deaths }}</h4>
+        </div>
+    </div>
+</body>
+</html>

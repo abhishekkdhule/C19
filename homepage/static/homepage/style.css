@@ -1,0 +1,100 @@
+#wrapper{
+    background-color: rgb(194, 192, 192);
+}
+#data-div{
+    width:85%;
+    margin:4% auto;
+    display:flex;
+    justify-content: space-evenly;   
+    /* background-color: red; */
+}
+h4{
+    font-family: 'Nunito', sans-serif;
+    font-size: 3.5vw;
+}
+#inner-data-div{
+    width:25%;
+    height:20vw;
+    font-size:2vw;
+    margin:5% 0;
+    background-color: white;
+    border-radius: 15px;
+    padding:2vw 2vw;
+}
+#inner-data-div:hover{
+    box-shadow: 8px 8px 25px 8px rgb(143, 141, 141), -8px 0px 25px 8px rgb(143, 141, 141);
+}
+p{
+    font-family:'Nunito', sans-serif;
+    font-size: 3vw;
+    border-bottom: 2px solid rgb(26, 26, 141);
+}
+h2{
+    text-align: center;
+    font-family:'Nunito', sans-serif;
+    font-size:2.5vw;
+}
+@media(max-width:500px){
+    h2{
+        font-size:4vw;
+    }
+    #header{
+        font-size: 50px;
+        margin:0;
+        width:300px;
+    }
+    #data-div{
+        flex-direction: column;
+        margin:0 auto;
+        /* background-color: red; */
+    }
+    #inner-data-div{
+        width:60%;
+        margin: 5% auto;
+        height:35vw;
+    }
+    p{
+        font-size: 6vw;
+    }
+}
+#header{
+    width:400px;
+    height:80px;
+    padding:10px 0;
+    margin:2% auto;
+    display:flex;
+    justify-content: center;
+    font-size: 80px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    border-bottom: 4px solid rgb(26, 34, 99);
+    /* background-color: rgb(168, 163, 163);     */
+}
+
+#img-head{
+    /* margin-bottom: 5px; */
+    background-image: url(red.png);
+    background-size: cover;
+    background-repeat:no-repeat ;
+    width:70px;
+    height:70px;
+    margin-top: 15px;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    /* background-color: red; */
+
+    /* height:100px;     */
+    /* margin:10% 0; */
+    z-index: 1;
+    /* background-color: rgb(34, 5, 19); */
+}
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
