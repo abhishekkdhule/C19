@@ -2,8 +2,6 @@ from django.shortcuts import render
 import pandas as pd
 
 
-
-df=pd.read_json("https://covid19.mathdro.id/api/countries/India")
 # print(df.head(1))
 # print(df[['confirmed','recovered','deaths','lastUpdate']])
 # print(df.dtypes)
