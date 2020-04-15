@@ -1,30 +1,205 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}">
     <link rel="icon" href="{% static 'homepage/red.png' %}">
-    <link rel="stylesheet" href="{% static 'homepage/style.css' %}" >
-    <title>COVID-19</title>
-</head>
-<body id="wrapper">
-        <div id="header">
-                C <div id="img-head"></div>VID-19
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>covid</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart(states) {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Infected', 'Recovered', 'Deaths', { role: 'annotation' } ],
+        [states[0].state, states[0].confirmed, states[0].recovered, states[0].deaths,''],
+        [states[1].state, states[1].confirmed, states[1].recovered, states[1].deaths,''],
+        [states[2].state, states[2].confirmed, states[2].recovered, states[2].deaths,''],
+        [states[3].state, states[3].confirmed, states[3].recovered, states[3].deaths,''],
+        [states[4].state, states[4].confirmed, states[4].recovered, states[4].deaths,''],
+        [states[5].state, states[5].confirmed, states[5].recovered, states[5].deaths,''],
+        [states[6].state, states[6].confirmed, states[6].recovered, states[6].deaths,''],
+        [states[7].state, states[7].confirmed, states[7].recovered, states[7].deaths,''],
+        [states[8].state, states[8].confirmed, states[8].recovered, states[8].deaths,''],
+        [states[9].state, states[9].confirmed, states[9].recovered, states[9].deaths,''],
+        [states[10].state, states[10].confirmed, states[10].recovered, states[10].deaths,''],
+        [states[11].state, states[11].confirmed, states[11].recovered, states[11].deaths,''],
+        [states[12].state, states[12].confirmed, states[12].recovered, states[12].deaths,''],
+        [states[13].state, states[13].confirmed, states[13].recovered, states[13].deaths,''],
+        [states[14].state, states[14].confirmed, states[14].recovered, states[14].deaths,''],
+        [states[15].state, states[15].confirmed, states[15].recovered, states[15].deaths,''],
+        [states[16].state, states[16].confirmed, states[16].recovered, states[16].deaths,''],
+        [states[17].state, states[17].confirmed, states[17].recovered, states[17].deaths,''],
+        [states[18].state, states[18].confirmed, states[18].recovered, states[18].deaths,''],
+        [states[19].state, states[19].confirmed, states[19].recovered, states[19].deaths,''],
+        [states[20].state, states[20].confirmed, states[20].recovered, states[20].deaths,''],
+        [states[21].state, states[21].confirmed, states[21].recovered, states[21].deaths,''],
+        [states[22].state, states[22].confirmed, states[22].recovered, states[22].deaths,''],
+        [states[23].state, states[23].confirmed, states[23].recovered, states[23].deaths,''],
+        [states[24].state, states[24].confirmed, states[24].recovered, states[24].deaths,''],
+        [states[25].state, states[25].confirmed, states[25].recovered, states[25].deaths,''],
+        [states[26].state, states[26].confirmed, states[26].recovered, states[26].deaths,''],
+        [states[27].state, states[27].confirmed, states[27].recovered, states[27].deaths,''],
+        [states[28].state, states[28].confirmed, states[28].recovered, states[28].deaths,''],
+        [states[29].state, states[29].confirmed, states[29].recovered, states[29].deaths,''],
+        [states[30].state, states[30].confirmed, states[30].recovered, states[30].deaths,''],
+        [states[31].state, states[31].confirmed, states[31].recovered, states[31].deaths,''],
+        [states[32].state, states[32].confirmed, states[32].recovered, states[32].deaths,''],
+        [states[33].state, states[33].confirmed, states[33].recovered, states[33].deaths,''],
+        [states[34].state, states[34].confirmed, states[34].recovered, states[34].deaths,''],
+        [states[35].state, states[35].confirmed, states[35].recovered, states[35].deaths,''],
+        [states[36].state, states[36].confirmed, states[36].recovered, states[36].deaths,''],
+      ]);
+
+      var options = {
+        backgroundColor:'rgb(6, 0, 37)',
+        
+        hAxis:{
+          textStyle:{color:'rgb(6, 0, 37)'},
+          gridlines:{color:'rgb(6, 0, 37)'},
+          textPosition:'none',
+        },
+        // width: 1200,
+        // height: 800,
+        legend: { position: 'top', maxLines: 5 },
+        bar: { groupWidth: '80%' },
+        isStacked: true,
+        bars: 'horizontal',
+        tooltip:{
+            text:'value',
+            trigger:'focus'
+        },
+        legend:{
+            position:'none',
+        },
+        series: {
+        0:{color:'#00CCFF'},
+        1:{color:'#29E939'},
+        2:{color:'red'},  
+     }
+      };
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(pie1);
+    function pie1(total,rec,ded) {
+      var data = google.visualization.arrayToDataTable([
+        ['Count', 'value'],
+        ['Total',total],
+        ['Recovered',rec],
+        ['Deaths',ded],
+        
+      ]);
+        
+      var options = {
+        pieSliceText: 'value',
+        legend:{
+            position:'none',
+        },
+        ignoreBounds:true,
+        backgroundColor:'rgb(6, 0, 37)',
+        pieHole: 0.6,
+        slices: {0: {color: 'rgb(0, 204, 255)'},1:{color:'rgb(41, 233, 57)'}, 2: {color: 'red'}},
+        // enableInteractivity:false,
+       
+        pieSliceBorderColor:'rgb(6, 0, 37)',
+        chartArea:{left:45,top:5,width:'90%',height:'90%'},
+        tooltip:{
+            text:'value',
+            trigger:'focus',
+            isHtml: true,
+        },
+        titleTextStyle:{
+            color:'white',
+            fontSize:30,
+            // fontName:'Source Sans Pro',    
+        }
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
+  </head>  
+<body onload="drawChart({{state_data}}),pie1({{total.confirmed}},{{ total.recovered }},{{ total.deaths }})">
+    <div class="wrapper">
+    <div id="header">
+        C <div id="img-head"></div>VID-19
+    </div>  
+    <h4 class="live-data">Live data of India</h4>
+    <div class="india-main">
+        <div class="left-india">
+            
+            <div class="india-data" style="background-image: linear-gradient(rgb(0, 255, 234),blue);">
+                <h4 class="india-text">Total<br>{{total.confirmed}} </h4>
+            </div> 
+            <div class="india-data" style="background-image: linear-gradient(rgb(53, 247, 117),green);">
+                <h4 class="india-text">Recovered<br>{{ total.recovered }}</h4>
+            </div> 
+            <div class="india-data" style="background-image: linear-gradient(rgb(250, 94, 128),rgb(240, 0, 0));">
+                <h4 class="india-text">Deaths<br>{{ total.deaths }}</h4>     
+            </div> 
         </div>
-        <h2>Live data of India</h2>
-    <div id="data-div">
-        <div id="inner-data-div">
-            <p>Confirmed </p>    <h4> {{ confirmed }}</h4>
-        </div>
-        <div id="inner-data-div">
-            <p>Recovered</p>  <h4>  {{ recovery }}</h4>
-        </div>
-        <div id="inner-data-div">
-            <p>Deaths</p>   <h4> {{ deaths }}</h4>
+        <div class="right-india">
+            
+            <div id="donutchart" style="width: 100%; height: 400px;"></div>
         </div>
     </div>
+
+<h2 class="graph">Scenario Of India</h2>
+<div class="barchart_material" id="barchart_material"></div>
+
+<h2 class="states">Individual States</h2>
+<div class="main-div">
+    
+  <div class="table-responsive">          
+    <table class="table table-striped table-dark">
+      <thead class="thead-dark">
+        <tr>
+          
+          <th>State</th>
+          <th>Confirmed</th>
+          <th>Active</th>
+          <th>Recovered</th>
+          <th>Deaths</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in state_data %}
+        <tr>
+          
+          <td>{{i.state}}</td>
+          <td>{{i.confirmed}}</td>
+          <td>{{i.active}}</td>
+          <td>{{i.recovered}}</td>
+          <td>{{i.deaths}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  
+    
+</div>
+<div class="owner">BY<br>
+<a target=_blank href="https://www.linkedin.com/in/abhishek-dhule-b2b76717b/">Abhishek Dhule</a>
+</div>
+</div>
+<h4 class="phone">PLEASE VIEW ON DESKTOP<h4>
 </body>
+
 </html>
